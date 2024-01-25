@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+.attribution {
+  font-size: 15px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="left-side">
+        <img src="images/logo.svg" class="logo" alt="Logo of Base apparel" />
+        <h1><span>We're </span></br>coming </br>soon</h1>
+
+        <p class="des">
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our
+          launch deals.</p>
+        
+        <div class="input-box">
+          <input class="email" placeholder="Email Address" type="email" />
+          <button class="send-btn"><img src="images/icon-arrow.svg" /></button>
+          <div class="error-text">Please provide a valid email</div>
+
+          <img class="error-icon" src="images/icon-error.svg">
+
+        </div>
+      </div>
+      <div class="right-side"></div>
+    </main>
+    <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Astorn</a>.
+      </p>
+    </footer>
+    <script>
+      const emailInput = document.querySelector(".email");
+      const sendBtn = document.querySelector(".send-btn");
+      const errorText = document.querySelector(".error-text");
+      const errorIcon = document.querySelector(".error-icon");
+      document.querySelector(".send-btn").addEventListener("click", () => {
+        if (!emailInput.value.includes("@")) {
+        emailInput.classList.toggle("active")
+        errorText.classList.toggle("active")
+        errorIcon.classList.toggle("active")
+        }
+        else {
+          alert("Your email has been added. You will receive a notification when we launch.");
+
+        }
+      })
+    </script>
+  </body>
+</html>
